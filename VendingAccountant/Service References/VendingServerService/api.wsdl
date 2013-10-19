@@ -1,0 +1,1951 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://wsdl.api.storagecycle.skladnik.nuc.cz/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="api" targetNamespace="http://wsdl.api.storagecycle.skladnik.nuc.cz/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://wsdl.api.storagecycle.skladnik.nuc.cz/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="addContact" type="tns:addContact" />
+      <xs:element name="addContactResponse" type="tns:addContactResponse" />
+      <xs:element name="assignPhoneId" type="tns:assignPhoneId" />
+      <xs:element name="assignPhoneIdResponse" type="tns:assignPhoneIdResponse" />
+      <xs:element name="assignRecipeToAudit" type="tns:assignRecipeToAudit" />
+      <xs:element name="assignRecipeToAuditResponse" type="tns:assignRecipeToAuditResponse" />
+      <xs:element name="auditDTO" type="tns:auditDTO" />
+      <xs:element name="auditLogDTO" type="tns:auditLogDTO" />
+      <xs:element name="auditReportDTO" type="tns:auditReportDTO" />
+      <xs:element name="changeDeactivationState" type="tns:changeDeactivationState" />
+      <xs:element name="changeDeactivationStateResponse" type="tns:changeDeactivationStateResponse" />
+      <xs:element name="contactDTO" type="tns:contactDTO" />
+      <xs:element name="createProduct" type="tns:createProduct" />
+      <xs:element name="createProductResponse" type="tns:createProductResponse" />
+      <xs:element name="createSpecialPrice" type="tns:createSpecialPrice" />
+      <xs:element name="createSpecialPriceResponse" type="tns:createSpecialPriceResponse" />
+      <xs:element name="createVendingMachine" type="tns:createVendingMachine" />
+      <xs:element name="createVendingMachineResponse" type="tns:createVendingMachineResponse" />
+      <xs:element name="deactivateAndMakeCopy" type="tns:deactivateAndMakeCopy" />
+      <xs:element name="deactivateAndMakeCopyResponse" type="tns:deactivateAndMakeCopyResponse" />
+      <xs:element name="deleteContact" type="tns:deleteContact" />
+      <xs:element name="deleteContactResponse" type="tns:deleteContactResponse" />
+      <xs:element name="deleteProduct" type="tns:deleteProduct" />
+      <xs:element name="deleteProductResponse" type="tns:deleteProductResponse" />
+      <xs:element name="deleteSpecialPrice" type="tns:deleteSpecialPrice" />
+      <xs:element name="deleteSpecialPriceResponse" type="tns:deleteSpecialPriceResponse" />
+      <xs:element name="deleteUser" type="tns:deleteUser" />
+      <xs:element name="deleteUserResponse" type="tns:deleteUserResponse" />
+      <xs:element name="deleteVendingMachine" type="tns:deleteVendingMachine" />
+      <xs:element name="deleteVendingMachineResponse" type="tns:deleteVendingMachineResponse" />
+      <xs:element name="editContact" type="tns:editContact" />
+      <xs:element name="editContactResponse" type="tns:editContactResponse" />
+      <xs:element name="editProduct" type="tns:editProduct" />
+      <xs:element name="editProductResponse" type="tns:editProductResponse" />
+      <xs:element name="editSpecialPrice" type="tns:editSpecialPrice" />
+      <xs:element name="editSpecialPriceResponse" type="tns:editSpecialPriceResponse" />
+      <xs:element name="editUser" type="tns:editUser" />
+      <xs:element name="editUserResponse" type="tns:editUserResponse" />
+      <xs:element name="editVendingMachine" type="tns:editVendingMachine" />
+      <xs:element name="editVendingMachineResponse" type="tns:editVendingMachineResponse" />
+      <xs:element name="exportAudits" type="tns:exportAudits" />
+      <xs:element name="exportAuditsResponse" type="tns:exportAuditsResponse" />
+      <xs:element name="filterProductTypes" type="tns:filterProductTypes" />
+      <xs:element name="filterProductTypesResponse" type="tns:filterProductTypesResponse" />
+      <xs:element name="filterVendingMachines" type="tns:filterVendingMachines" />
+      <xs:element name="filterVendingMachinesResponse" type="tns:filterVendingMachinesResponse" />
+      <xs:element name="getAuditDetail" type="tns:getAuditDetail" />
+      <xs:element name="getAuditDetailResponse" type="tns:getAuditDetailResponse" />
+      <xs:element name="getAudits" type="tns:getAudits" />
+      <xs:element name="getAuditsResponse" type="tns:getAuditsResponse" />
+      <xs:element name="getLastServiceVisits" type="tns:getLastServiceVisits" />
+      <xs:element name="getLastServiceVisitsResponse" type="tns:getLastServiceVisitsResponse" />
+      <xs:element name="getLoginInfoForPhone" type="tns:getLoginInfoForPhone" />
+      <xs:element name="getLoginInfoForPhoneResponse" type="tns:getLoginInfoForPhoneResponse" />
+      <xs:element name="getMachineDetail" type="tns:getMachineDetail" />
+      <xs:element name="getMachineDetailResponse" type="tns:getMachineDetailResponse" />
+      <xs:element name="getProductDetail" type="tns:getProductDetail" />
+      <xs:element name="getProductDetailByBarcode" type="tns:getProductDetailByBarcode" />
+      <xs:element name="getProductDetailByBarcodeResponse" type="tns:getProductDetailByBarcodeResponse" />
+      <xs:element name="getProductDetailResponse" type="tns:getProductDetailResponse" />
+      <xs:element name="getProductTypes" type="tns:getProductTypes" />
+      <xs:element name="getProductTypesResponse" type="tns:getProductTypesResponse" />
+      <xs:element name="getRoles" type="tns:getRoles" />
+      <xs:element name="getRolesResponse" type="tns:getRolesResponse" />
+      <xs:element name="getServiceVisitCount" type="tns:getServiceVisitCount" />
+      <xs:element name="getServiceVisitCountResponse" type="tns:getServiceVisitCountResponse" />
+      <xs:element name="getServiceVisits" type="tns:getServiceVisits" />
+      <xs:element name="getServiceVisitsResponse" type="tns:getServiceVisitsResponse" />
+      <xs:element name="getSpecialPriceDetail" type="tns:getSpecialPriceDetail" />
+      <xs:element name="getSpecialPriceDetailResponse" type="tns:getSpecialPriceDetailResponse" />
+      <xs:element name="getSpecialPricesOnMachine" type="tns:getSpecialPricesOnMachine" />
+      <xs:element name="getSpecialPricesOnMachineResponse" type="tns:getSpecialPricesOnMachineResponse" />
+      <xs:element name="getTechnicianItems" type="tns:getTechnicianItems" />
+      <xs:element name="getTechnicianItemsById" type="tns:getTechnicianItemsById" />
+      <xs:element name="getTechnicianItemsByIdResponse" type="tns:getTechnicianItemsByIdResponse" />
+      <xs:element name="getTechnicianItemsResponse" type="tns:getTechnicianItemsResponse" />
+      <xs:element name="getUnlockedWarehouses" type="tns:getUnlockedWarehouses" />
+      <xs:element name="getUnlockedWarehousesResponse" type="tns:getUnlockedWarehousesResponse" />
+      <xs:element name="getUserDetail" type="tns:getUserDetail" />
+      <xs:element name="getUserDetailResponse" type="tns:getUserDetailResponse" />
+      <xs:element name="getUsers" type="tns:getUsers" />
+      <xs:element name="getUsersResponse" type="tns:getUsersResponse" />
+      <xs:element name="getVendingMachines" type="tns:getVendingMachines" />
+      <xs:element name="getVendingMachinesResponse" type="tns:getVendingMachinesResponse" />
+      <xs:element name="getWarehouseItems" type="tns:getWarehouseItems" />
+      <xs:element name="getWarehouseItemsResponse" type="tns:getWarehouseItemsResponse" />
+      <xs:element name="importToWarehouse" type="tns:importToWarehouse" />
+      <xs:element name="importToWarehouseResponse" type="tns:importToWarehouseResponse" />
+      <xs:element name="isRegistered" type="tns:isRegistered" />
+      <xs:element name="isRegisteredResponse" type="tns:isRegisteredResponse" />
+      <xs:element name="lockStock" type="tns:lockStock" />
+      <xs:element name="lockStockResponse" type="tns:lockStockResponse" />
+      <xs:element name="login" type="tns:login" />
+      <xs:element name="loginPhone" type="tns:loginPhone" />
+      <xs:element name="loginPhoneResponse" type="tns:loginPhoneResponse" />
+      <xs:element name="loginResponse" type="tns:loginResponse" />
+      <xs:element name="nullPhoneId" type="tns:nullPhoneId" />
+      <xs:element name="nullPhoneIdResponse" type="tns:nullPhoneIdResponse" />
+      <xs:element name="productStockDTO" type="tns:productStockDTO" />
+      <xs:element name="productTypeDTO" type="tns:productTypeDTO" />
+      <xs:element name="recipeDTO" type="tns:recipeDTO" />
+      <xs:element name="register" type="tns:register" />
+      <xs:element name="registerResponse" type="tns:registerResponse" />
+      <xs:element name="registerUser" type="tns:registerUser" />
+      <xs:element name="registerUserResponse" type="tns:registerUserResponse" />
+      <xs:element name="registrationDTO" type="tns:registrationDTO" />
+      <xs:element name="roleDTO" type="tns:roleDTO" />
+      <xs:element name="sendAudit" type="tns:sendAudit" />
+      <xs:element name="sendAuditResponse" type="tns:sendAuditResponse" />
+      <xs:element name="setCashWithdrawnForVisit" type="tns:setCashWithdrawnForVisit" />
+      <xs:element name="setCashWithdrawnForVisitResponse" type="tns:setCashWithdrawnForVisitResponse" />
+      <xs:element name="setNewPassword" type="tns:setNewPassword" />
+      <xs:element name="setNewPasswordResponse" type="tns:setNewPasswordResponse" />
+      <xs:element name="specialPriceDTO" type="tns:specialPriceDTO" />
+      <xs:element name="transferToTechnician" type="tns:transferToTechnician" />
+      <xs:element name="transferToTechnicianResponse" type="tns:transferToTechnicianResponse" />
+      <xs:element name="unlockStock" type="tns:unlockStock" />
+      <xs:element name="unlockStockResponse" type="tns:unlockStockResponse" />
+      <xs:element name="userDTO" type="tns:userDTO" />
+      <xs:element name="vendingMachineDTO" type="tns:vendingMachineDTO" />
+      <xs:element name="visitVendingMachine" type="tns:visitVendingMachine" />
+      <xs:element name="visitVendingMachineResponse" type="tns:visitVendingMachineResponse" />
+      <xs:complexType name="isRegistered">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="isRegisteredResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="register">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="registerResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editSpecialPrice">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+          <xs:element minOccurs="0" name="arg1" type="tns:specialPriceDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="specialPriceDTO">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="price" type="xs:float" />
+          <xs:element name="machineId" type="xs:long" />
+          <xs:element name="productTypeId" type="xs:long" />
+          <xs:element name="validFromTimestamp" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editSpecialPriceResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="deleteSpecialPrice">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteSpecialPriceResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getUnlockedWarehouses">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getUnlockedWarehousesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:userDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="userDTO">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="phoneId" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element name="roleId" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:productTypeDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productTypeDTO">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="barcode" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element name="itemsInBox" type="xs:int" />
+          <xs:element name="defaultPrice" type="xs:float" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createProductResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editUser">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+          <xs:element minOccurs="0" name="arg1" type="tns:userDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editUserResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getServiceVisits">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getServiceVisitsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:serviceVisitDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="serviceVisitDTO">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="userId" type="xs:long" />
+          <xs:element minOccurs="0" name="userPhoneId" type="xs:string" />
+          <xs:element name="vendingMachineId" type="xs:long" />
+          <xs:element minOccurs="0" name="machine" type="tns:vendingMachineDTO" />
+          <xs:element name="timestamp" type="xs:long" />
+          <xs:element minOccurs="0" name="withdrawnCash" type="xs:int" />
+          <xs:element minOccurs="0" name="totalCounterState" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="items" nillable="true" type="tns:productStockDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="vendingMachineDTO">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="number" type="xs:int" />
+          <xs:element minOccurs="0" name="address" type="xs:string" />
+          <xs:element name="counterCount" type="xs:int" />
+          <xs:element name="deactivated" type="xs:boolean" />
+          <xs:element minOccurs="0" name="serialNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="code" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="specialPrices" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="contacts" nillable="true" type="tns:contactDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="contactDTO">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="value" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productStockDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:productTypeDTO">
+            <xs:sequence>
+              <xs:element name="count" type="xs:float" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="changeDeactivationState">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+          <xs:element name="arg1" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="changeDeactivationStateResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getServiceVisitCount">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getServiceVisitCountResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAuditDetail">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAuditDetailResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:auditDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="auditDTO">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="personId" type="xs:long" />
+          <xs:element minOccurs="0" name="personPhoneId" type="xs:string" />
+          <xs:element name="vendingMachineId" type="xs:long" />
+          <xs:element name="timestamp" type="xs:long" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="logs" nillable="true" type="tns:auditLogDTO" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="materials" nillable="true" type="tns:productStockDTO" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="changedRecipes" nillable="true" type="tns:recipeDTO" />
+          <xs:element minOccurs="0" name="cash" type="xs:float" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="auditLogDTO">
+        <xs:sequence>
+          <xs:element name="position" type="xs:int" />
+          <xs:element name="counterState" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="recipeDTO">
+        <xs:sequence>
+          <xs:element name="recipeId" type="xs:long" />
+          <xs:element name="position" type="xs:int" />
+          <xs:element name="price" type="xs:float" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="materials" nillable="true" type="tns:productStockDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="arrayList">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractList">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="abstractList" abstract="true">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractCollection">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="abstractCollection" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="login">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="loginResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:userDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getUserDetail">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getUserDetailResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:userDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addContact">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+          <xs:element minOccurs="0" name="arg1" type="tns:contactDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addContactResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:contactDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getLoginInfoForPhone">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getLoginInfoForPhoneResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:registrationDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="registrationDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="login" type="xs:string" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getRoles">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getRolesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:roleDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="roleDTO">
+        <xs:sequence>
+          <xs:element name="roleId" type="xs:long" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTechnicianItems">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTechnicianItemsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productStockDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="filterProductTypes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="filterProductTypesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productTypeDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteVendingMachine">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteVendingMachineResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="lockStock">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="lockStockResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getSpecialPriceDetail">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getSpecialPriceDetailResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:specialPriceDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getMachineDetail">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getMachineDetailResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:vendingMachineDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editProduct">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+          <xs:element minOccurs="0" name="arg1" type="tns:productTypeDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editProductResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="createVendingMachine">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:vendingMachineDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createVendingMachineResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:vendingMachineDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getWarehouseItems">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getWarehouseItemsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productStockDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="loginPhone">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="loginPhoneResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="exportAudits">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="exportAuditsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:auditReportDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="auditReportDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lastAudit" type="tns:auditDTO" />
+          <xs:element minOccurs="0" name="currentAudit" type="tns:auditDTO" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="serviceVisits" nillable="true" type="tns:serviceVisitDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteProduct">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteProductResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getAudits">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAuditsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:auditDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="visitVendingMachine">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:serviceVisitDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="visitVendingMachineResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteUser">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteUserResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getVendingMachines">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getVendingMachinesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:vendingMachineDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="nullPhoneId">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="nullPhoneIdResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="sendAudit">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:auditDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendAuditResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="transferToTechnician">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element name="arg1" type="xs:float" />
+          <xs:element name="arg2" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="transferToTechnicianResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="registerUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+          <xs:element name="arg2" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="registerUserResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deactivateAndMakeCopy">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deactivateAndMakeCopyResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:vendingMachineDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="assignRecipeToAudit">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+          <xs:element minOccurs="0" name="arg1" type="tns:recipeDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="assignRecipeToAuditResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="editVendingMachine">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+          <xs:element minOccurs="0" name="arg1" type="tns:vendingMachineDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editVendingMachineResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="deleteContact">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteContactResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="unlockStock">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="unlockStockResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="importToWarehouse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element name="arg1" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="importToWarehouseResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createSpecialPrice">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:specialPriceDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createSpecialPriceResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getUsers">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getUsersResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:userDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductTypes">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getProductTypesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productTypeDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setCashWithdrawnForVisit">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+          <xs:element minOccurs="0" name="arg1" type="xs:int" />
+          <xs:element minOccurs="0" name="arg2" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setCashWithdrawnForVisitResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getLastServiceVisits">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:int" />
+          <xs:element name="arg1" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getLastServiceVisitsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:serviceVisitDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setNewPassword">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setNewPasswordResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getProductDetail">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductDetailResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:productTypeDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="filterVendingMachines">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="filterVendingMachinesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:vendingMachineDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="assignPhoneId">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="assignPhoneIdResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getProductDetailByBarcode">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductDetailByBarcodeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:productTypeDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getSpecialPricesOnMachine">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getSpecialPricesOnMachineResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:specialPriceDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editContact">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+          <xs:element minOccurs="0" name="arg1" type="tns:contactDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editContactResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getTechnicianItemsById">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTechnicianItemsByIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productStockDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AlreadyRegisteredException" type="tns:AlreadyRegisteredException" />
+      <xs:complexType name="AlreadyRegisteredException">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="NotExistingMachineException" type="tns:NotExistingMachineException" />
+      <xs:complexType name="NotExistingMachineException">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="UserNotFoundException" type="tns:UserNotFoundException" />
+      <xs:complexType name="UserNotFoundException">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="StockNotAvailableException" type="tns:StockNotAvailableException" />
+      <xs:complexType name="StockNotAvailableException">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="WarehouseLockedException" type="tns:WarehouseLockedException" />
+      <xs:complexType name="WarehouseLockedException">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="InvalidPhoneIdFormat" type="tns:InvalidPhoneIdFormat" />
+      <xs:complexType name="InvalidPhoneIdFormat">
+        <xs:sequence />
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="createProduct">
+    <wsdl:part name="parameters" element="tns:createProduct" />
+  </wsdl:message>
+  <wsdl:message name="getServiceVisitCount">
+    <wsdl:part name="parameters" element="tns:getServiceVisitCount" />
+  </wsdl:message>
+  <wsdl:message name="deleteSpecialPriceResponse">
+    <wsdl:part name="parameters" element="tns:deleteSpecialPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="assignPhoneId">
+    <wsdl:part name="parameters" element="tns:assignPhoneId" />
+  </wsdl:message>
+  <wsdl:message name="editSpecialPriceResponse">
+    <wsdl:part name="parameters" element="tns:editSpecialPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="deactivateAndMakeCopyResponse">
+    <wsdl:part name="parameters" element="tns:deactivateAndMakeCopyResponse" />
+  </wsdl:message>
+  <wsdl:message name="createSpecialPriceResponse">
+    <wsdl:part name="parameters" element="tns:createSpecialPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUnlockedWarehousesResponse">
+    <wsdl:part name="parameters" element="tns:getUnlockedWarehousesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductDetailResponse">
+    <wsdl:part name="parameters" element="tns:getProductDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServiceVisitsResponse">
+    <wsdl:part name="parameters" element="tns:getServiceVisitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="editVendingMachine">
+    <wsdl:part name="parameters" element="tns:editVendingMachine" />
+  </wsdl:message>
+  <wsdl:message name="assignPhoneIdResponse">
+    <wsdl:part name="parameters" element="tns:assignPhoneIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteUser">
+    <wsdl:part name="parameters" element="tns:deleteUser" />
+  </wsdl:message>
+  <wsdl:message name="getAuditDetail">
+    <wsdl:part name="parameters" element="tns:getAuditDetail" />
+  </wsdl:message>
+  <wsdl:message name="createSpecialPrice">
+    <wsdl:part name="parameters" element="tns:createSpecialPrice" />
+  </wsdl:message>
+  <wsdl:message name="StockNotAvailableException">
+    <wsdl:part name="StockNotAvailableException" element="tns:StockNotAvailableException" />
+  </wsdl:message>
+  <wsdl:message name="getWarehouseItems">
+    <wsdl:part name="parameters" element="tns:getWarehouseItems" />
+  </wsdl:message>
+  <wsdl:message name="lockStockResponse">
+    <wsdl:part name="parameters" element="tns:lockStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSpecialPricesOnMachineResponse">
+    <wsdl:part name="parameters" element="tns:getSpecialPricesOnMachineResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserNotFoundException">
+    <wsdl:part name="UserNotFoundException" element="tns:UserNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="sendAudit">
+    <wsdl:part name="parameters" element="tns:sendAudit" />
+  </wsdl:message>
+  <wsdl:message name="getProductDetailByBarcode">
+    <wsdl:part name="parameters" element="tns:getProductDetailByBarcode" />
+  </wsdl:message>
+  <wsdl:message name="getSpecialPriceDetailResponse">
+    <wsdl:part name="parameters" element="tns:getSpecialPriceDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTechnicianItemsResponse">
+    <wsdl:part name="parameters" element="tns:getTechnicianItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="transferToTechnicianResponse">
+    <wsdl:part name="parameters" element="tns:transferToTechnicianResponse" />
+  </wsdl:message>
+  <wsdl:message name="login">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="filterVendingMachinesResponse">
+    <wsdl:part name="parameters" element="tns:filterVendingMachinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAuditDetailResponse">
+    <wsdl:part name="parameters" element="tns:getAuditDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="registerResponse">
+    <wsdl:part name="parameters" element="tns:registerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSpecialPricesOnMachine">
+    <wsdl:part name="parameters" element="tns:getSpecialPricesOnMachine" />
+  </wsdl:message>
+  <wsdl:message name="getProductDetail">
+    <wsdl:part name="parameters" element="tns:getProductDetail" />
+  </wsdl:message>
+  <wsdl:message name="createVendingMachineResponse">
+    <wsdl:part name="parameters" element="tns:createVendingMachineResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVendingMachinesResponse">
+    <wsdl:part name="parameters" element="tns:getVendingMachinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductTypesResponse">
+    <wsdl:part name="parameters" element="tns:getProductTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="transferToTechnician">
+    <wsdl:part name="parameters" element="tns:transferToTechnician" />
+  </wsdl:message>
+  <wsdl:message name="editUser">
+    <wsdl:part name="parameters" element="tns:editUser" />
+  </wsdl:message>
+  <wsdl:message name="getLastServiceVisitsResponse">
+    <wsdl:part name="parameters" element="tns:getLastServiceVisitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="isRegisteredResponse">
+    <wsdl:part name="parameters" element="tns:isRegisteredResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUsers">
+    <wsdl:part name="parameters" element="tns:getUsers" />
+  </wsdl:message>
+  <wsdl:message name="WarehouseLockedException">
+    <wsdl:part name="WarehouseLockedException" element="tns:WarehouseLockedException" />
+  </wsdl:message>
+  <wsdl:message name="importToWarehouse">
+    <wsdl:part name="parameters" element="tns:importToWarehouse" />
+  </wsdl:message>
+  <wsdl:message name="deleteContact">
+    <wsdl:part name="parameters" element="tns:deleteContact" />
+  </wsdl:message>
+  <wsdl:message name="addContactResponse">
+    <wsdl:part name="parameters" element="tns:addContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="editProductResponse">
+    <wsdl:part name="parameters" element="tns:editProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="loginPhoneResponse">
+    <wsdl:part name="parameters" element="tns:loginPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="exportAudits">
+    <wsdl:part name="parameters" element="tns:exportAudits" />
+  </wsdl:message>
+  <wsdl:message name="getTechnicianItems">
+    <wsdl:part name="parameters" element="tns:getTechnicianItems" />
+  </wsdl:message>
+  <wsdl:message name="NotExistingMachineException">
+    <wsdl:part name="NotExistingMachineException" element="tns:NotExistingMachineException" />
+  </wsdl:message>
+  <wsdl:message name="getMachineDetail">
+    <wsdl:part name="parameters" element="tns:getMachineDetail" />
+  </wsdl:message>
+  <wsdl:message name="deleteSpecialPrice">
+    <wsdl:part name="parameters" element="tns:deleteSpecialPrice" />
+  </wsdl:message>
+  <wsdl:message name="getServiceVisits">
+    <wsdl:part name="parameters" element="tns:getServiceVisits" />
+  </wsdl:message>
+  <wsdl:message name="filterProductTypes">
+    <wsdl:part name="parameters" element="tns:filterProductTypes" />
+  </wsdl:message>
+  <wsdl:message name="createVendingMachine">
+    <wsdl:part name="parameters" element="tns:createVendingMachine" />
+  </wsdl:message>
+  <wsdl:message name="sendAuditResponse">
+    <wsdl:part name="parameters" element="tns:sendAuditResponse" />
+  </wsdl:message>
+  <wsdl:message name="loginPhone">
+    <wsdl:part name="parameters" element="tns:loginPhone" />
+  </wsdl:message>
+  <wsdl:message name="getWarehouseItemsResponse">
+    <wsdl:part name="parameters" element="tns:getWarehouseItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="editVendingMachineResponse">
+    <wsdl:part name="parameters" element="tns:editVendingMachineResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRoles">
+    <wsdl:part name="parameters" element="tns:getRoles" />
+  </wsdl:message>
+  <wsdl:message name="getVendingMachines">
+    <wsdl:part name="parameters" element="tns:getVendingMachines" />
+  </wsdl:message>
+  <wsdl:message name="getTechnicianItemsByIdResponse">
+    <wsdl:part name="parameters" element="tns:getTechnicianItemsByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="assignRecipeToAuditResponse">
+    <wsdl:part name="parameters" element="tns:assignRecipeToAuditResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductDetailByBarcodeResponse">
+    <wsdl:part name="parameters" element="tns:getProductDetailByBarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="nullPhoneId">
+    <wsdl:part name="parameters" element="tns:nullPhoneId" />
+  </wsdl:message>
+  <wsdl:message name="getLoginInfoForPhoneResponse">
+    <wsdl:part name="parameters" element="tns:getLoginInfoForPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAuditsResponse">
+    <wsdl:part name="parameters" element="tns:getAuditsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSpecialPriceDetail">
+    <wsdl:part name="parameters" element="tns:getSpecialPriceDetail" />
+  </wsdl:message>
+  <wsdl:message name="deleteProduct">
+    <wsdl:part name="parameters" element="tns:deleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="filterProductTypesResponse">
+    <wsdl:part name="parameters" element="tns:filterProductTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRolesResponse">
+    <wsdl:part name="parameters" element="tns:getRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="assignRecipeToAudit">
+    <wsdl:part name="parameters" element="tns:assignRecipeToAudit" />
+  </wsdl:message>
+  <wsdl:message name="unlockStock">
+    <wsdl:part name="parameters" element="tns:unlockStock" />
+  </wsdl:message>
+  <wsdl:message name="unlockStockResponse">
+    <wsdl:part name="parameters" element="tns:unlockStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="setNewPasswordResponse">
+    <wsdl:part name="parameters" element="tns:setNewPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAudits">
+    <wsdl:part name="parameters" element="tns:getAudits" />
+  </wsdl:message>
+  <wsdl:message name="editSpecialPrice">
+    <wsdl:part name="parameters" element="tns:editSpecialPrice" />
+  </wsdl:message>
+  <wsdl:message name="nullPhoneIdResponse">
+    <wsdl:part name="parameters" element="tns:nullPhoneIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="changeDeactivationState">
+    <wsdl:part name="parameters" element="tns:changeDeactivationState" />
+  </wsdl:message>
+  <wsdl:message name="getProductTypes">
+    <wsdl:part name="parameters" element="tns:getProductTypes" />
+  </wsdl:message>
+  <wsdl:message name="isRegistered">
+    <wsdl:part name="parameters" element="tns:isRegistered" />
+  </wsdl:message>
+  <wsdl:message name="visitVendingMachine">
+    <wsdl:part name="parameters" element="tns:visitVendingMachine" />
+  </wsdl:message>
+  <wsdl:message name="getTechnicianItemsById">
+    <wsdl:part name="parameters" element="tns:getTechnicianItemsById" />
+  </wsdl:message>
+  <wsdl:message name="changeDeactivationStateResponse">
+    <wsdl:part name="parameters" element="tns:changeDeactivationStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlreadyRegisteredException">
+    <wsdl:part name="AlreadyRegisteredException" element="tns:AlreadyRegisteredException" />
+  </wsdl:message>
+  <wsdl:message name="filterVendingMachines">
+    <wsdl:part name="parameters" element="tns:filterVendingMachines" />
+  </wsdl:message>
+  <wsdl:message name="deleteProductResponse">
+    <wsdl:part name="parameters" element="tns:deleteProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteContactResponse">
+    <wsdl:part name="parameters" element="tns:deleteContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="importToWarehouseResponse">
+    <wsdl:part name="parameters" element="tns:importToWarehouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="addContact">
+    <wsdl:part name="parameters" element="tns:addContact" />
+  </wsdl:message>
+  <wsdl:message name="registerUser">
+    <wsdl:part name="parameters" element="tns:registerUser" />
+  </wsdl:message>
+  <wsdl:message name="loginResponse">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="deactivateAndMakeCopy">
+    <wsdl:part name="parameters" element="tns:deactivateAndMakeCopy" />
+  </wsdl:message>
+  <wsdl:message name="getMachineDetailResponse">
+    <wsdl:part name="parameters" element="tns:getMachineDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="editContactResponse">
+    <wsdl:part name="parameters" element="tns:editContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="register">
+    <wsdl:part name="parameters" element="tns:register" />
+  </wsdl:message>
+  <wsdl:message name="deleteVendingMachineResponse">
+    <wsdl:part name="parameters" element="tns:deleteVendingMachineResponse" />
+  </wsdl:message>
+  <wsdl:message name="visitVendingMachineResponse">
+    <wsdl:part name="parameters" element="tns:visitVendingMachineResponse" />
+  </wsdl:message>
+  <wsdl:message name="InvalidPhoneIdFormat">
+    <wsdl:part name="InvalidPhoneIdFormat" element="tns:InvalidPhoneIdFormat" />
+  </wsdl:message>
+  <wsdl:message name="setNewPassword">
+    <wsdl:part name="parameters" element="tns:setNewPassword" />
+  </wsdl:message>
+  <wsdl:message name="getUserDetail">
+    <wsdl:part name="parameters" element="tns:getUserDetail" />
+  </wsdl:message>
+  <wsdl:message name="createProductResponse">
+    <wsdl:part name="parameters" element="tns:createProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUsersResponse">
+    <wsdl:part name="parameters" element="tns:getUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="setCashWithdrawnForVisit">
+    <wsdl:part name="parameters" element="tns:setCashWithdrawnForVisit" />
+  </wsdl:message>
+  <wsdl:message name="deleteVendingMachine">
+    <wsdl:part name="parameters" element="tns:deleteVendingMachine" />
+  </wsdl:message>
+  <wsdl:message name="getServiceVisitCountResponse">
+    <wsdl:part name="parameters" element="tns:getServiceVisitCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLastServiceVisits">
+    <wsdl:part name="parameters" element="tns:getLastServiceVisits" />
+  </wsdl:message>
+  <wsdl:message name="setCashWithdrawnForVisitResponse">
+    <wsdl:part name="parameters" element="tns:setCashWithdrawnForVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="editProduct">
+    <wsdl:part name="parameters" element="tns:editProduct" />
+  </wsdl:message>
+  <wsdl:message name="getUserDetailResponse">
+    <wsdl:part name="parameters" element="tns:getUserDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLoginInfoForPhone">
+    <wsdl:part name="parameters" element="tns:getLoginInfoForPhone" />
+  </wsdl:message>
+  <wsdl:message name="exportAuditsResponse">
+    <wsdl:part name="parameters" element="tns:exportAuditsResponse" />
+  </wsdl:message>
+  <wsdl:message name="registerUserResponse">
+    <wsdl:part name="parameters" element="tns:registerUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="editContact">
+    <wsdl:part name="parameters" element="tns:editContact" />
+  </wsdl:message>
+  <wsdl:message name="editUserResponse">
+    <wsdl:part name="parameters" element="tns:editUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="lockStock">
+    <wsdl:part name="parameters" element="tns:lockStock" />
+  </wsdl:message>
+  <wsdl:message name="deleteUserResponse">
+    <wsdl:part name="parameters" element="tns:deleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUnlockedWarehouses">
+    <wsdl:part name="parameters" element="tns:getUnlockedWarehouses" />
+  </wsdl:message>
+  <wsdl:portType name="storageCycleService">
+    <wsdl:operation name="isRegistered">
+      <wsdl:input name="isRegistered" message="tns:isRegistered" />
+      <wsdl:output name="isRegisteredResponse" message="tns:isRegisteredResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="register">
+      <wsdl:input name="register" message="tns:register" />
+      <wsdl:output name="registerResponse" message="tns:registerResponse" />
+      <wsdl:fault name="AlreadyRegisteredException" message="tns:AlreadyRegisteredException" />
+    </wsdl:operation>
+    <wsdl:operation name="editSpecialPrice">
+      <wsdl:input name="editSpecialPrice" message="tns:editSpecialPrice" />
+      <wsdl:output name="editSpecialPriceResponse" message="tns:editSpecialPriceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteSpecialPrice">
+      <wsdl:input name="deleteSpecialPrice" message="tns:deleteSpecialPrice" />
+      <wsdl:output name="deleteSpecialPriceResponse" message="tns:deleteSpecialPriceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnlockedWarehouses">
+      <wsdl:input name="getUnlockedWarehouses" message="tns:getUnlockedWarehouses" />
+      <wsdl:output name="getUnlockedWarehousesResponse" message="tns:getUnlockedWarehousesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createProduct">
+      <wsdl:input name="createProduct" message="tns:createProduct" />
+      <wsdl:output name="createProductResponse" message="tns:createProductResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="editUser">
+      <wsdl:input name="editUser" message="tns:editUser" />
+      <wsdl:output name="editUserResponse" message="tns:editUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getServiceVisits">
+      <wsdl:input name="getServiceVisits" message="tns:getServiceVisits" />
+      <wsdl:output name="getServiceVisitsResponse" message="tns:getServiceVisitsResponse" />
+      <wsdl:fault name="NotExistingMachineException" message="tns:NotExistingMachineException" />
+    </wsdl:operation>
+    <wsdl:operation name="changeDeactivationState">
+      <wsdl:input name="changeDeactivationState" message="tns:changeDeactivationState" />
+      <wsdl:output name="changeDeactivationStateResponse" message="tns:changeDeactivationStateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getServiceVisitCount">
+      <wsdl:input name="getServiceVisitCount" message="tns:getServiceVisitCount" />
+      <wsdl:output name="getServiceVisitCountResponse" message="tns:getServiceVisitCountResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAuditDetail">
+      <wsdl:input name="getAuditDetail" message="tns:getAuditDetail" />
+      <wsdl:output name="getAuditDetailResponse" message="tns:getAuditDetailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input name="login" message="tns:login" />
+      <wsdl:output name="loginResponse" message="tns:loginResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserDetail">
+      <wsdl:input name="getUserDetail" message="tns:getUserDetail" />
+      <wsdl:output name="getUserDetailResponse" message="tns:getUserDetailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addContact">
+      <wsdl:input name="addContact" message="tns:addContact" />
+      <wsdl:output name="addContactResponse" message="tns:addContactResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getLoginInfoForPhone">
+      <wsdl:input name="getLoginInfoForPhone" message="tns:getLoginInfoForPhone" />
+      <wsdl:output name="getLoginInfoForPhoneResponse" message="tns:getLoginInfoForPhoneResponse" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoles">
+      <wsdl:input name="getRoles" message="tns:getRoles" />
+      <wsdl:output name="getRolesResponse" message="tns:getRolesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTechnicianItems">
+      <wsdl:input name="getTechnicianItems" message="tns:getTechnicianItems" />
+      <wsdl:output name="getTechnicianItemsResponse" message="tns:getTechnicianItemsResponse" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+    </wsdl:operation>
+    <wsdl:operation name="filterProductTypes">
+      <wsdl:input name="filterProductTypes" message="tns:filterProductTypes" />
+      <wsdl:output name="filterProductTypesResponse" message="tns:filterProductTypesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteVendingMachine">
+      <wsdl:input name="deleteVendingMachine" message="tns:deleteVendingMachine" />
+      <wsdl:output name="deleteVendingMachineResponse" message="tns:deleteVendingMachineResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="lockStock">
+      <wsdl:input name="lockStock" message="tns:lockStock" />
+      <wsdl:output name="lockStockResponse" message="tns:lockStockResponse" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialPriceDetail">
+      <wsdl:input name="getSpecialPriceDetail" message="tns:getSpecialPriceDetail" />
+      <wsdl:output name="getSpecialPriceDetailResponse" message="tns:getSpecialPriceDetailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMachineDetail">
+      <wsdl:input name="getMachineDetail" message="tns:getMachineDetail" />
+      <wsdl:output name="getMachineDetailResponse" message="tns:getMachineDetailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="editProduct">
+      <wsdl:input name="editProduct" message="tns:editProduct" />
+      <wsdl:output name="editProductResponse" message="tns:editProductResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createVendingMachine">
+      <wsdl:input name="createVendingMachine" message="tns:createVendingMachine" />
+      <wsdl:output name="createVendingMachineResponse" message="tns:createVendingMachineResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getWarehouseItems">
+      <wsdl:input name="getWarehouseItems" message="tns:getWarehouseItems" />
+      <wsdl:output name="getWarehouseItemsResponse" message="tns:getWarehouseItemsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="loginPhone">
+      <wsdl:input name="loginPhone" message="tns:loginPhone" />
+      <wsdl:output name="loginPhoneResponse" message="tns:loginPhoneResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="exportAudits">
+      <wsdl:input name="exportAudits" message="tns:exportAudits" />
+      <wsdl:output name="exportAuditsResponse" message="tns:exportAuditsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteProduct">
+      <wsdl:input name="deleteProduct" message="tns:deleteProduct" />
+      <wsdl:output name="deleteProductResponse" message="tns:deleteProductResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAudits">
+      <wsdl:input name="getAudits" message="tns:getAudits" />
+      <wsdl:output name="getAuditsResponse" message="tns:getAuditsResponse" />
+      <wsdl:fault name="NotExistingMachineException" message="tns:NotExistingMachineException" />
+    </wsdl:operation>
+    <wsdl:operation name="visitVendingMachine">
+      <wsdl:input name="visitVendingMachine" message="tns:visitVendingMachine" />
+      <wsdl:output name="visitVendingMachineResponse" message="tns:visitVendingMachineResponse" />
+      <wsdl:fault name="NotExistingMachineException" message="tns:NotExistingMachineException" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+      <wsdl:fault name="StockNotAvailableException" message="tns:StockNotAvailableException" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <wsdl:input name="deleteUser" message="tns:deleteUser" />
+      <wsdl:output name="deleteUserResponse" message="tns:deleteUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getVendingMachines">
+      <wsdl:input name="getVendingMachines" message="tns:getVendingMachines" />
+      <wsdl:output name="getVendingMachinesResponse" message="tns:getVendingMachinesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="nullPhoneId">
+      <wsdl:input name="nullPhoneId" message="tns:nullPhoneId" />
+      <wsdl:output name="nullPhoneIdResponse" message="tns:nullPhoneIdResponse" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+    </wsdl:operation>
+    <wsdl:operation name="sendAudit">
+      <wsdl:input name="sendAudit" message="tns:sendAudit" />
+      <wsdl:output name="sendAuditResponse" message="tns:sendAuditResponse" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+      <wsdl:fault name="StockNotAvailableException" message="tns:StockNotAvailableException" />
+    </wsdl:operation>
+    <wsdl:operation name="transferToTechnician">
+      <wsdl:input name="transferToTechnician" message="tns:transferToTechnician" />
+      <wsdl:output name="transferToTechnicianResponse" message="tns:transferToTechnicianResponse" />
+      <wsdl:fault name="WarehouseLockedException" message="tns:WarehouseLockedException" />
+      <wsdl:fault name="StockNotAvailableException" message="tns:StockNotAvailableException" />
+    </wsdl:operation>
+    <wsdl:operation name="registerUser">
+      <wsdl:input name="registerUser" message="tns:registerUser" />
+      <wsdl:output name="registerUserResponse" message="tns:registerUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deactivateAndMakeCopy">
+      <wsdl:input name="deactivateAndMakeCopy" message="tns:deactivateAndMakeCopy" />
+      <wsdl:output name="deactivateAndMakeCopyResponse" message="tns:deactivateAndMakeCopyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="assignRecipeToAudit">
+      <wsdl:input name="assignRecipeToAudit" message="tns:assignRecipeToAudit" />
+      <wsdl:output name="assignRecipeToAuditResponse" message="tns:assignRecipeToAuditResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="editVendingMachine">
+      <wsdl:input name="editVendingMachine" message="tns:editVendingMachine" />
+      <wsdl:output name="editVendingMachineResponse" message="tns:editVendingMachineResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteContact">
+      <wsdl:input name="deleteContact" message="tns:deleteContact" />
+      <wsdl:output name="deleteContactResponse" message="tns:deleteContactResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="unlockStock">
+      <wsdl:input name="unlockStock" message="tns:unlockStock" />
+      <wsdl:output name="unlockStockResponse" message="tns:unlockStockResponse" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+    </wsdl:operation>
+    <wsdl:operation name="importToWarehouse">
+      <wsdl:input name="importToWarehouse" message="tns:importToWarehouse" />
+      <wsdl:output name="importToWarehouseResponse" message="tns:importToWarehouseResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createSpecialPrice">
+      <wsdl:input name="createSpecialPrice" message="tns:createSpecialPrice" />
+      <wsdl:output name="createSpecialPriceResponse" message="tns:createSpecialPriceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <wsdl:input name="getUsers" message="tns:getUsers" />
+      <wsdl:output name="getUsersResponse" message="tns:getUsersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductTypes">
+      <wsdl:input name="getProductTypes" message="tns:getProductTypes" />
+      <wsdl:output name="getProductTypesResponse" message="tns:getProductTypesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setCashWithdrawnForVisit">
+      <wsdl:input name="setCashWithdrawnForVisit" message="tns:setCashWithdrawnForVisit" />
+      <wsdl:output name="setCashWithdrawnForVisitResponse" message="tns:setCashWithdrawnForVisitResponse" />
+      <wsdl:fault name="NotExistingMachineException" message="tns:NotExistingMachineException" />
+    </wsdl:operation>
+    <wsdl:operation name="getLastServiceVisits">
+      <wsdl:input name="getLastServiceVisits" message="tns:getLastServiceVisits" />
+      <wsdl:output name="getLastServiceVisitsResponse" message="tns:getLastServiceVisitsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setNewPassword">
+      <wsdl:input name="setNewPassword" message="tns:setNewPassword" />
+      <wsdl:output name="setNewPasswordResponse" message="tns:setNewPasswordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductDetail">
+      <wsdl:input name="getProductDetail" message="tns:getProductDetail" />
+      <wsdl:output name="getProductDetailResponse" message="tns:getProductDetailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="filterVendingMachines">
+      <wsdl:input name="filterVendingMachines" message="tns:filterVendingMachines" />
+      <wsdl:output name="filterVendingMachinesResponse" message="tns:filterVendingMachinesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="assignPhoneId">
+      <wsdl:input name="assignPhoneId" message="tns:assignPhoneId" />
+      <wsdl:output name="assignPhoneIdResponse" message="tns:assignPhoneIdResponse" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+      <wsdl:fault name="InvalidPhoneIdFormat" message="tns:InvalidPhoneIdFormat" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductDetailByBarcode">
+      <wsdl:input name="getProductDetailByBarcode" message="tns:getProductDetailByBarcode" />
+      <wsdl:output name="getProductDetailByBarcodeResponse" message="tns:getProductDetailByBarcodeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialPricesOnMachine">
+      <wsdl:input name="getSpecialPricesOnMachine" message="tns:getSpecialPricesOnMachine" />
+      <wsdl:output name="getSpecialPricesOnMachineResponse" message="tns:getSpecialPricesOnMachineResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="editContact">
+      <wsdl:input name="editContact" message="tns:editContact" />
+      <wsdl:output name="editContactResponse" message="tns:editContactResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTechnicianItemsById">
+      <wsdl:input name="getTechnicianItemsById" message="tns:getTechnicianItemsById" />
+      <wsdl:output name="getTechnicianItemsByIdResponse" message="tns:getTechnicianItemsByIdResponse" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="apiSoapBinding" type="tns:storageCycleService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="register">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="register">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="registerResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AlreadyRegisteredException">
+        <soap:fault use="literal" name="AlreadyRegisteredException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isRegistered">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="isRegistered">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="isRegisteredResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSpecialPrice">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="deleteSpecialPrice">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deleteSpecialPriceResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editSpecialPrice">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="editSpecialPrice">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="editSpecialPriceResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnlockedWarehouses">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getUnlockedWarehouses">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getUnlockedWarehousesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProduct">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="createProduct">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createProductResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editUser">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="editUser">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="editUserResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeDeactivationState">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="changeDeactivationState">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="changeDeactivationStateResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceVisits">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getServiceVisits">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getServiceVisitsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="NotExistingMachineException">
+        <soap:fault use="literal" name="NotExistingMachineException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceVisitCount">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getServiceVisitCount">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getServiceVisitCountResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAuditDetail">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getAuditDetail">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAuditDetailResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="login">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="loginResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addContact">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="addContact">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="addContactResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserDetail">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getUserDetail">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getUserDetailResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLoginInfoForPhone">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getLoginInfoForPhone">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getLoginInfoForPhoneResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRoles">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getRoles">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getRolesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTechnicianItems">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getTechnicianItems">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTechnicianItemsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="filterProductTypes">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="filterProductTypes">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="filterProductTypesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteVendingMachine">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="deleteVendingMachine">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deleteVendingMachineResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialPriceDetail">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getSpecialPriceDetail">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getSpecialPriceDetailResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lockStock">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="lockStock">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="lockStockResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="editProduct">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="editProduct">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="editProductResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMachineDetail">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getMachineDetail">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getMachineDetailResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createVendingMachine">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="createVendingMachine">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createVendingMachineResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWarehouseItems">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getWarehouseItems">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getWarehouseItemsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportAudits">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="exportAudits">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="exportAuditsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loginPhone">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="loginPhone">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="loginPhoneResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteProduct">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="deleteProduct">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deleteProductResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAudits">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getAudits">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAuditsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="NotExistingMachineException">
+        <soap:fault use="literal" name="NotExistingMachineException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="deleteUser">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deleteUserResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="visitVendingMachine">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="visitVendingMachine">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="visitVendingMachineResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="NotExistingMachineException">
+        <soap:fault use="literal" name="NotExistingMachineException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="StockNotAvailableException">
+        <soap:fault use="literal" name="StockNotAvailableException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="nullPhoneId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="nullPhoneId">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="nullPhoneIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVendingMachines">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getVendingMachines">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getVendingMachinesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendAudit">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="sendAudit">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendAuditResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="StockNotAvailableException">
+        <soap:fault use="literal" name="StockNotAvailableException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="registerUser">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="registerUser">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="registerUserResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transferToTechnician">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="transferToTechnician">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="transferToTechnicianResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WarehouseLockedException">
+        <soap:fault use="literal" name="WarehouseLockedException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="StockNotAvailableException">
+        <soap:fault use="literal" name="StockNotAvailableException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="assignRecipeToAudit">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="assignRecipeToAudit">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="assignRecipeToAuditResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deactivateAndMakeCopy">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="deactivateAndMakeCopy">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deactivateAndMakeCopyResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteContact">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="deleteContact">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deleteContactResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editVendingMachine">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="editVendingMachine">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="editVendingMachineResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unlockStock">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="unlockStock">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="unlockStockResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createSpecialPrice">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="createSpecialPrice">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createSpecialPriceResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importToWarehouse">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="importToWarehouse">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="importToWarehouseResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductTypes">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getProductTypes">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProductTypesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getUsers">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getUsersResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastServiceVisits">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getLastServiceVisits">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getLastServiceVisitsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCashWithdrawnForVisit">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="setCashWithdrawnForVisit">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="setCashWithdrawnForVisitResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="NotExistingMachineException">
+        <soap:fault use="literal" name="NotExistingMachineException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setNewPassword">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="setNewPassword">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="setNewPasswordResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="filterVendingMachines">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="filterVendingMachines">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="filterVendingMachinesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductDetail">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getProductDetail">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProductDetailResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="assignPhoneId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="assignPhoneId">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="assignPhoneIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidPhoneIdFormat">
+        <soap:fault use="literal" name="InvalidPhoneIdFormat" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProductDetailByBarcode">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getProductDetailByBarcode">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProductDetailByBarcodeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialPricesOnMachine">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getSpecialPricesOnMachine">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getSpecialPricesOnMachineResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editContact">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="editContact">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="editContactResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTechnicianItemsById">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getTechnicianItemsById">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTechnicianItemsByIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="api">
+    <wsdl:port name="StorageCycleRemoteFacadePort" binding="tns:apiSoapBinding">
+      <soap:address location="http://localhost:8080/storagecycle/api/StorageCycleRemoteFacade" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
